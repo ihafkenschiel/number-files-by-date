@@ -12,9 +12,9 @@ list_of_files = sorted( list_of_files,
                         )
 # Iterate over sorted list of files and print file path 
 # along with last modification time of file 
+count = 1
 for file_name in list_of_files:
     file_path = os.path.join(dir_name, file_name)
-    timestamp_str = time.strftime(  '%m/%d/%Y :: %H:%M:%S',
-                                time.gmtime(os.path.getmtime(file_path))) 
-    print(timestamp_str, ' -->', file_name)    
+    print( '%02d' % count , "-", file_name)    
+    count += 1
 
