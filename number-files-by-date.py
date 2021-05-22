@@ -1,7 +1,15 @@
 import os
 import time
 
-dir_name = '/Applications/MAMP/htdocs/number-files-by-date/Test'
+# For testing:
+# dir_name = '/Applications/MAMP/htdocs/number-files-by-date/Test'
+
+dir_name = ""
+while True:
+    print("Enter full folder path:")
+    dir_name = input()
+    if os.path.isdir(dir_name):
+        break
 
 # Get list of all files only in the given directory
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
