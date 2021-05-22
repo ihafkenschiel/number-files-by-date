@@ -15,6 +15,8 @@ list_of_files = sorted( list_of_files,
 count = 1
 for file_name in list_of_files:
     file_path = os.path.join(dir_name, file_name)
-    print( '%02d' % count , "-", file_name)    
+    new_name = '%02d' % count + " - "  + file_name
+    print(new_name)
+    os.rename(dir_name + "/" + file_name, dir_name + "/" + new_name)
     count += 1
 
