@@ -24,6 +24,8 @@ else:
         if dir_name[0] == "'":
             dir_name = dir_name.strip("'")
 
+        dir_name = dir_name.strip() # trim whitespace
+
         if os.path.isdir(dir_name):
             break
 
