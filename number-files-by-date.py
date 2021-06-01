@@ -19,6 +19,11 @@ else:
     while True:
         print("Enter full folder path:")
         dir_name = input()
+        
+        # remove single quotes around folder path if folder is draged to terminal
+        if dir_name[0] == "'":
+            dir_name = dir_name.strip("'")
+
         if os.path.isdir(dir_name):
             break
 
