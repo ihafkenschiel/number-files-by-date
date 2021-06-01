@@ -1,15 +1,26 @@
+#!/usr/bin/python
+
 import os
+import sys
 import time
 
 # For testing:
 # dir_name = '/Applications/MAMP/htdocs/number-files-by-date/Test'
 
 dir_name = ""
-while True:
-    print("Enter full folder path:")
-    dir_name = input()
+if len(sys.argv) == 2:
+    dir_name = sys.argv[1]
     if os.path.isdir(dir_name):
-        break
+        print("Adding tracks to folder: " + dir_name)
+    else:
+        print("ERROR: Not a folder: " + dir_name)
+        quit()
+else:
+    while True:
+        print("Enter full folder path:")
+        dir_name = input()
+        if os.path.isdir(dir_name):
+            break
 
 # Get list of all files only in the given directory
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
